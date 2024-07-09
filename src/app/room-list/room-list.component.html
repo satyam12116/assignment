@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <div class="row ml-4">
+    <div class="col-md-8">
+      <input type="text" class="form-control mb-2" placeholder="Enter time (e.g., 10:00)" [(ngModel)]="time">  
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary mb-2" (click)="onSearch()">Search</button>
+    </div>
+      
+  </div>
+    <div class="row">
+      <div class="col-md-4">
+        
+        <div class="list-group">
+          <div *ngFor="let room of rooms" class="list-group-item" (click)="onSelect(room)">
+            <span>{{ room.name }}</span>
+            <span style="margin-left:50px">Seating Capacity: {{ room.dates[0].seat }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <app-room-detail [room]="selectedRoom" [selectedDate]="selectedDate" *ngIf="selectedRoom"></app-room-detail>
+      </div>
+    </div>
+  </div>
+  

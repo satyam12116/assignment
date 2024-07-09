@@ -1,0 +1,103 @@
+.row{
+    display: flex;
+    margin-left: 300px;
+}
+list-group{
+    cursor: pointer;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width:400px;
+    height:100px;
+    border:1px solid gray;
+}
+.list{
+  border:1px solid gray;
+  width:500px;  
+}
+.badge {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.badge.disabled {
+  cursor: not-allowed;
+}
+
+.bg-white {
+  background-color:grey !important;
+}
+
+.selected-time {
+  border: 2px solid #000;
+}
+.badge {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.badge.disabled {
+  cursor: not-allowed;
+}
+
+.selected-time {
+  border: 2px solid #000;
+}
+
+.fixed-open {
+
+  display: block;
+}
+.custom-calendar {
+  font-family: Arial, sans-serif;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.current-month {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.calendar-days {
+  display: flex;
+}
+
+.calendar-day {
+  width: calc(100% / 7);
+  text-align: center;
+  font-weight: bold;
+}
+
+.calendar-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.calendar-dates {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.calendar-date {
+  width: calc(100% / 7);
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+.calendar-date.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-success {
+  margin-top: 10px;
+}

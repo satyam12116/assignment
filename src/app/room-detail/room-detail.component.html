@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ room.name }}</h5>
+    <div class="form-group">
+      <div class="custom-calendar">
+        <div class="calendar-body">
+          <div class="calendar-days">
+            <div *ngFor="let day of daysInMonth; let i = index" class="calendar-day">
+              {{ day }}
+            </div>
+          </div>
+          <div class="calendar-dates">
+            <div *ngFor="let date of datesInMonth" 
+                 class="calendar-date"
+                 [ngClass]="{ 'selected': isDateSelected(date) }"
+                >
+              {{ date.getDate() }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let dateEntry of room.dates">
+      <p class="card-text">Seating capacity: {{ dateEntry.seat }}</p>
+      <div class="d-flex flex-wrap">
+        <span *ngFor="let timeEntry of dateEntry.times" 
+              class="badge me-2 mb-2" 
+              [ngClass]="{
+                'bg-success': selectedTime === timeEntry,
+                'bg-danger': timeEntry.booked,
+                'bg-white': !timeEntry.booked && selectedTime !== timeEntry
+              }"
+              (click)="selectTime(timeEntry)"
+              [class.disabled]="timeEntry.booked">
+          {{ timeEntry.time }}
+        </span>
+      </div>
+    </div>
+
+    <button class="btn btn-primary mt-3" (click)="bookRoom()" [disabled]="!selectedTime">Book Room</button>
+  </div>
+</div>
+
+  
